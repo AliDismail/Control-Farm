@@ -27,6 +27,7 @@ The robot:
 
 ## Design Summary
 ![Figure 1: Real Demonstration](images/Picture1.png)
+
 ![Figure 2: Theoretical Concept](images/Picture2.png)
 Our project is an open-field and greenhouse multi-process farm robot automating:
 - Plant spacing  
