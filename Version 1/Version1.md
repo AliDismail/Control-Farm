@@ -29,6 +29,7 @@ The robot:
 ![Figure 1: Real Demonstration](images/Picture1.png)
 
 ![Figure 2: Theoretical Concept](images/Picture2.png)
+
 Our project is an open-field and greenhouse multi-process farm robot automating:
 - Plant spacing  
 - Furrowing  
@@ -51,9 +52,13 @@ Our project is an open-field and greenhouse multi-process farm robot automating:
 
 ### Design
 ![Figure 3: Bottom View](images/Picture3.png)
+
 ![Figure 4: Top View](images/Picture4.png)
+
 ![Figure 5: Back View](images/Picture5.png)
+
 ![Figure 6: Side View](images/Picture6.png)
+
 - Built using **wood, carbon steel, and PLA+**.  
 - Wood: lightweight platform.  
 - Carbon steel: bogie, rocker, MyRio box, motor mounts (laser cut, drilled, welded).  
@@ -61,7 +66,9 @@ Our project is an open-field and greenhouse multi-process farm robot automating:
 - Elevated platform and leg structure → effective navigation in rough terrain.  
 
 **Switching mechanism :** 
+ 
  ![Figure 7: Switching Mechanism](images/Picture7.png)
+
 - Controlled rotation coordinates motion among linked elements.  
 - Torque transmission and angular velocity optimized for smooth switching.  
 - Ensures consistent motion control in harsh conditions.  
@@ -93,35 +100,62 @@ Our project is an open-field and greenhouse multi-process farm robot automating:
 
 ### Code (State Machine)
 The robot is controlled by a **state machine**:
+
  ![Figure 8: State Machine Diagram](images/Picture8.png)
+
  ![Figure 9: Program Interface](images/Picture9.png)
+
 - **Turn ON:** boots for 3s → IDLE  
+
 ![Figure 10: Turn On State](images/Picture10.png)
-- **IDLE:** waits for user input (remote start button) 
+
+- **IDLE:** waits for user input (remote start button)
+ 
 ![Figure 11: IDLE State](images/Picture11.png)
+
 - **Start Farming:** waits 2s → Drive  
+
 ![Figure 12: Start Farming State](images/Picture12.png)
-- **Drive:** DC motors run 2s → Drilling  
+
+- **Drive:** DC motors run 2s → Drilling
+  
 ![Figure 13: Drive State](images/Picture13.png)
+
 - **Drilling:** Stepper lowers drill 3s → raises drill 3s → Seeding  
+
 ![Figure 14: Drilling-Down State](images/Picture14.png)
+
 ![Figure 15: Drilling-Up State](images/Picture15.png) 
+
 - **Seeding:**  
   - Servo1 rotates 60° → seeding mode  
   - Stepper2 lowers tunnel 2s  
   - Servo2 opens seed valve 1s → closes 1s  
   - Stepper2 raises tunnel 2s → Watering  
-![Figure 16: Seeding-Switch State](images/Picture16.png) 
+  
+![Figure 16: Seeding-Switch State](images/Picture16.png)
+ 
 ![Figure 17: Seeding-Down State](images/Picture17.png)
-![Figure 18: Seeding State](images/Picture18.png)  
+
+![Figure 18: Seeding State](images/Picture18.png)
+  
 ![Figure 19: Seeding-Up State](images/Picture19.png)  
+
 - **Watering:** Servo1 rotates 60° → watering mode → valve opens 2s → Filling 
-![Figure 20: Watering State](images/Picture20.png)   
+
+![Figure 20: Watering State](images/Picture23.png) 
+
 - **Filling:** Servo1 rotates -120° → drilling mode → DC motors run 2s → loop  
+
+![Figure 21: Filling State](images/Picture20.png)
+   
 - **Stop:** user presses stop button → system off  
-![Figure 21: Stop State](images/Picture21.png)   
+
+![Figure 22: Stop State](images/Picture21.png)  
+ 
 - **Fell Off:** accelerometer detects fall → buzzer 5s → returns to IDLE 
-![Figure 22: Fell Off State](images/Picture22.png)    
+
+![Figure 23: Fell Off State](images/Picture22.png)    
 
 ---
 
