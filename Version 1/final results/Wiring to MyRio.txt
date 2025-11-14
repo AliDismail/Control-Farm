@@ -1,0 +1,47 @@
+Wiring to MyRio:
+
+*DC Motor1-2-3-4:
+
+Motor Driver:
+ENA:A/PWM0|pin 27
+ENB:B/PWM0|pin 27
+IN1:A/DIO0|pin 11
+IN2:A/DIO1|pin 13
+IN3:A/DIO2|pin 15
+IN4:A/DIO3|pin 17
+
+
+- Motor1-2:
+MotorA on the Motor Driver
+
+- Motor3-4:
+MotorB on the Motor Driver
+
+*Servo 1 (Mode Switcher):
+A/PWM1|pin 29
+
+*Servo 2 (Seed opener):
+A/PWM2|pin 31
+
+*Stepper 1:
+IN1:B/DIO0|pin 11
+IN2:B/DIO1|pin 13
+IN3:B/DIO2|pin 15
+IN4:B/DIO3|pin 17
+
+*Stepper 2:
+IN1:B/DIO0|pin 19
+IN2:B/DIO1|pin 21
+IN3:B/DIO2|pin 23
+IN4:B/DIO3|pin 25
+
+*Buzzer
+
+*Remote control
+
+*Water valve
+
+
+
+
+
